@@ -1,0 +1,62 @@
+
+body {
+  margin: 50px;
+  background-color:aliceblue;
+  background-size:cover;
+  background-position:center;
+}
+
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "m h h h h h h h h h h h"
+    "m c c c c c c c c c c c"
+    "m f f f f f f f f f f f";
+}
+
+ h1 {
+  text-align: center;
+  color: cornflowerblue;
+}
+
+
+
+.navbar-nav .nav-item .nav-link {
+  color: rgb(110, 103, 103);
+  
+}
+
+
+.header {
+  grid-area: h;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.menu {
+  grid-area: m;
+}
+
+.content {
+  margin-bottom: 40px;
+  grid-area: c;
+  font-size: 25px;
+  text-align: justify;
+}
+
+.footer {
+  grid-area: f;
+  margin-left: auto;
+  display: flex;
+}
+
+.info {
+  color: rgb(0, 0, 0);
+  margin-left: 25px;
+}
+
+
+
+
+

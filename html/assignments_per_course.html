@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments per course</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/assignments_per_course.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="/js/assignments_per_course.js"></script>
+    <title>Assignments_per_course</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>ASSIGNMENTS PER COURSE</h1>
+        </div>
+        <div class="menu">
+            <div class="col-1 float-left">
+                <div class="btn-group-vertical">
+                    <button onclick="document.location='/index.html'" id="home"
+                        class="btn btn-outline-primary w-100">Home</button>
+                    <button onclick="document.location='/html/courses.html'"
+                        class="btn btn-outline-primary w-100">Courses</button>
+                    <button onclick="document.location='/html/trainers.html'"
+                        class="btn btn-outline-primary  w-100">Trainers</button>
+                    <button onclick="document.location='/html/students.html'"
+                        class="btn btn-outline-primary w-100">Students</button>
+                    <button onclick="document.location='/html/assignments.html'"
+                        class="btn btn-outline-primary w-100">Assignments</button>
+                    <button onclick="document.location='/html/trainers_per_course.html'"
+                        class="btn btn-outline-primary  w-100">Trainers per Course</button>
+                    <button onclick="document.location='/html/students_per_course.html'"
+                        class="btn btn-outline-primary w-100">Students per Course</button>
+                    <button onclick="document.location='/html/assignments_per_course.html'"
+                        class="btn btn-outline-primary btn-info w-100">Assignments per Course</button>
+                    <button onclick="document.location='/html/assignments_per_student_per_course.html'"
+                        class="btn btn-outline-primary w-100">Assignments per Student per Course</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <table id="assignments-per-course-table" class="table table-striped table-dark text-center">
+                <thead class="thead">
+                    <tr>
+                        <th>Title</th>
+                        <th>Course</th>
+                        <th>Sub-Date-Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-primary">
+                        <td class="align-middle">Calculate the area of a circle</td>
+                        <td class="align-middle">Maths</td>
+                        <td class="align-middle">11/04/2022</td>
+                        <td>
+                            <button type="button" class="btn
+                                    btn-outline-primary btn-sm" data-toggle="modal" data-target="#edit">
+                                Edit
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="align-middle">Describe an algorithmic procedure</td>
+                        <td class="align-middle">Computer Science</td>
+                        <td class="align-middle">20/04/2022</td>
+
+                        <td>
+                            <button type="button" class="btn
+                                    btn-outline-primary btn-sm" data-toggle="modal" data-target="#edit">
+                                Edit
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="align-middle">What do you know about the trial of Galileo</td>
+                        <td class="align-middle">History</td>
+                        <td class="align-middle">26/04/2022</td>
+                        <td>
+                            <button type="button" class="btn
+                                    btn-outline-primary btn-sm" data-toggle="modal" data-target="#edit">
+                                Edit
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="align-middle">What is the Renaissance Period known for. Write an essay</td>
+                        <td class="align-middle">English Literature</td>
+                        <td class="align-middle">10/05/2022</td>
+                        <td>
+                            <button type="button" class="btn
+                                    btn-outline-primary btn-sm" data-toggle="modal" data-target="#edit">
+                                Edit
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="table-primary">
+                        <td class="align-middle">Write down all the cities of North America</td>
+                        <td class="align-middle">Geography</td>
+                        <td class="align-middle">25/05/2022</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary btn-sm " data-toggle="modal"
+                                data-target="#edit">
+                                Edit
+                            </button>
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div>
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#add">
+                    Add a new assignment per course
+                </button>
+            </div>
+
+            <!--Modal Add new Assignment per course-->
+            <div class="modal fade" id="add" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add a new assignment per course</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                        </div>
+                        <!--Form-->
+                        <div class="modal-body">
+                            <form id="add_new_assignment_per_course" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="add_title" name="add_title" value=""
+                                        placeholder="Enter a title" required />
+                                    <div class="alert alert-danger" id="add_title_error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="course">Course</label>
+                                    <input type="text" class="form-control" id="add_course" name="add_course" value=""
+                                        placeholder="Enter a course" required />
+                                    <div class="alert alert-danger" id="add_course_error"></div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="sub_date_time">Sub-Date-Time</label>
+                                    <input type="date" class="form-control" id="add_sub_date_time"
+                                        name="add_sub_date_time" value="" placeholder="" required />
+                                </div>
+                            </form>
+                            <div class="modal-footer">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" id="add_assignment_per_course_button"
+                                        class="btn btn-primary btn-dark mb-1">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Edit Assignment per course-->
+            <div class="modal fade" id="edit" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog alert-warning bg-warning">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Assignment</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!--Form-->
+                        <div class="modal-body">
+                            <form id="edit_assignment_per_course" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="edit_title" name="edit_title" value=""
+                                        placeholder="Enter a title" required />
+                                    <div class="alert alert-danger" id="edit_title_error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="course">Course</label>
+                                    <input type="text" class="form-control" id="edit_course" name="edit_course" value=""
+                                        placeholder="Enter a course" required />
+                                    <div class="alert alert-danger" id="edit_course_error"></div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="sub_date_time">Sub-Date-Time</label>
+                                    <input type="date" class="form-control" id="edit_sub_date_time"
+                                        name="edit_sub_date_time" value="" placeholder="" required />
+                                </div>
+                            </form>
+                            <div class="modal-footer">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" id="edit_assignment_per_course_button"
+                                        class="btn btn-primary btn-dark mb-1">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="info">
+                <h5>Contact us:</h5>
+            </div>
+            <div class="info">
+                <h5>Phone:23310 245339</h5>
+            </div>
+            <div class="info">
+                <h5>Email:mail@remedial_teaching.com</h5>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
